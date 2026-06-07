@@ -1,0 +1,85 @@
+
+// let count=0;
+
+
+
+// const number=document.querySelector("#count");
+
+// document.getElementById("sub").addEventListener("click", function(){
+
+//     number.textContent =count--
+// });
+// // const title=document.querySelector("#title")
+// // title.textContent="Javascript"
+
+
+to do list app:-
+
+
+
+let input=document.querySelector("#input")
+const btn=document.querySelector("#add-btn")
+let list=document.querySelector("#todo-list")
+let x=""
+// console.log(x)
+
+document.getElementById("add-btn").addEventListener("click",function(){
+    if(input.value===""){
+        alert("required filds can not be empty")
+    }else{
+     x=document.createElement("li")
+    x.textContent=input.value
+    list.appendChild(x)
+    x=input.value=""
+    }
+})
+///////////////////////////////////////////to-do-app/////////////////////////////////////////////////
+
+
+
+
+
+let input=document.querySelector("#input")
+const btn=document.querySelector("#add-btn")
+let list=document.querySelector("#todo-list")
+
+// console.log(x)
+
+document.getElementById("add-btn").addEventListener("click",function(){
+    if(input.value===""){
+        alert("required filds can not be empty")
+    }else{
+        let x 
+        let button
+        let edit
+        let span
+         button=document.createElement("button")
+         x=document.createElement("li")
+         x.addEventListener("click",function(){
+            // x.classList.add("completed")
+            x.classList.toggle("completed")
+         })
+         list.appendChild(x)
+         span=document.createElement("span")
+         span.textContent=input.value
+         x.appendChild(span)
+         button.textContent="Delete"
+         button.addEventListener("click",function(){
+              x.remove();
+            })
+            edit=document.createElement("button")
+            edit.textContent="edit"
+            x.appendChild(edit)
+            x.appendChild(button)
+            input.value=""
+        edit.addEventListener("click",function(){
+            span.textContent=prompt("what do you want to edit in task")
+            event.stopPropagation();
+        })
+   
+    }
+})
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
